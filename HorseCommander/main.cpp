@@ -64,6 +64,7 @@ int main() {
 		}else if(s=="help"){
 			printf("OShorse内置命令：\n");
 			printf("锁屏：lock\n");
+			printf("提示：msg [MESSAGE]\n");
 			continue;
 		}
 		for(int i=0;i<s.size();i++){
