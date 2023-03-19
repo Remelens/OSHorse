@@ -62,8 +62,8 @@ int main() {
 	
 	char recv_data[BUFFER_SIZE+1];
 	const char * send_data;
-	char ch[10240]={'\0'};
 	while (true) {
+		char ch[10240]={'\0'};
 		sprintf(ch,"");
 		int ret = recv(client_socket, recv_data, BUFFER_SIZE, 0);
 		if (ret < 0) {
@@ -84,7 +84,7 @@ int main() {
 			for(int i=3;i<strlen(recv_data);i++){
 				ch[i-3]=recv_data[i];
 			}
-			chdir(ch);
+			if(ch[0]!='\0')chdir(ch);
 			char* ch1;
 			ch1=getcwd(NULL,0);
 			send(client_socket, ch1, strlen(ch1), 0);
