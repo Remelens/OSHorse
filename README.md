@@ -7,7 +7,7 @@
 
 来看看这个远程命令程序！
 
-项目地址：https://github.com/HelloOSMe/OSHorse
+个人博客介绍：https://blog.helloos.eu.org/index.php/blog/13
 
 ## 小技巧：
 1. 谎称connecter.exe是个利用host加速的程序
