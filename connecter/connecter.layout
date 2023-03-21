@@ -1,12 +1,12 @@
 [
     {
-        "caretX": 25,
-        "caretY": 66,
+        "caretX": 2,
+        "caretY": 62,
         "filename": "C:/Users/Lenovo/Documents/projects/connecter/main.cpp",
         "focused": true,
         "isOpen": true,
         "leftChar": 1,
         "order": 0,
-        "topLine": 52
+        "topLine": 28
     }
 ]

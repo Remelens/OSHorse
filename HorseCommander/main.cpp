@@ -3,12 +3,17 @@
 #include <stdbool.h>
 #include <winsock2.h> 
 #include<bits/stdc++.h>
-#define PORT 8080
 #define  BUFFER_SIZE 4196
 using namespace std;
 const char* kExitFlag = "exit";
-
+unsigned short PORT=8080;
+void get_ip(){
+	ifstream fin ("connect.txt");
+	fin>>PORT;
+	fin.close();
+}
 int main() {
+	get_ip();
 	WORD winsock_version = MAKEWORD(2,2);
 	WSADATA wsa_data;
 	if (WSAStartup(winsock_version, &wsa_data) != 0) {

