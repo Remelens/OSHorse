@@ -1,5 +1,6 @@
 # OSHorse，轻松控制同学电脑！
 ### 免责声明：仅供学术研究使用。对于违反相关法律、造成危害的滥用行为，开发者不负任何责任。
+### Disclaimer: For academic research purposes only. Developers are not responsible for any abuse that violates relevant laws and causes harm.
 
 ## 有关这个项目
 最近一直在找机会研究如何破解极域电子教室，结果百度了几下，看到某篇利用电子教室控制同学的教程。
